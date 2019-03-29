@@ -26,13 +26,59 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
+  Widget buildButton(String buttonText) {
+    return new Expanded(
+      child: new OutlineButton(
+        child: new Text(buttonText),
+        onPressed: () => {},
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: new Container()
-    );
+        appBar: AppBar(
+          title: Text(widget.title),
+        ),
+        body: new Container(
+            child: new Column(
+          children: <Widget>[
+            new Text("0"),
+            new Expanded(
+              child: new Divider(),
+            ),
+            new Column(children: [
+              new Row(children: [
+                buildButton("7"),
+                buildButton("8"),
+                buildButton("9"),
+                buildButton("/")
+              ]),
+              new Row(children: [
+                buildButton("4"),
+                buildButton("5"),
+                buildButton("6"),
+                buildButton("X")
+              ]),
+              new Row(children: [
+                buildButton("1"),
+                buildButton("2"),
+                buildButton("3"),
+                buildButton("-")
+              ]),
+              new Row(children: [
+                buildButton("."),
+                buildButton("0"),
+                buildButton("00"),
+                buildButton("+")
+              ]),
+              new Row(children: [
+                buildButton("CLEAR"),
+                buildButton("="),
+              ])
+            ])
+          ],
+        )));
   }
 }
