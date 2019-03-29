@@ -43,17 +43,27 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
+    return new Scaffold(
+        appBar: new AppBar(
+          title: new Text(widget.title),
         ),
         body: new Container(
             child: new Column(
           children: <Widget>[
-            new Text("0"),
+            new Container(
+              alignment: Alignment.centerRight,
+              padding: new EdgeInsets.symmetric(
+                vertical: 24.0,
+                horizontal: 12.0
+              ),
+              child: new Text("output", style: new TextStyle(
+                fontSize: 48.0,
+                fontWeight: FontWeight.bold,
+                
+              ))),
             new Expanded(
               child: new Divider(),
-            ),
+),
             new Column(children: [
               new Row(children: [
                 buildButton("7"),
