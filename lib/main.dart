@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
+Brightness brightness;
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -9,8 +11,10 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        brightness: Brightness.dark,
       ),
-      home: MyHomePage(title: 'Calculator'),
+      home: MyHomePage(
+        title: 'Calculator'),
     );
   }
 }
